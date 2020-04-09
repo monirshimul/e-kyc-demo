@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#loginBg {
+  border: 1px solid #fff;
+  min-height: 100vh;
+  min-width: 100vw;
+
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.2)),
+    url(image/bg3.jpg) center/cover fixed no-repeat;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#leftContent {
+  margin: 0 auto;
+  min-height: 50vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#formHolder {
+  margin: 0 auto;
+
+  background: rgba(255, 255, 255, 0.1);
+  /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.5)),
+      url(image/login7.jpeg) center/cover fixed no-repeat; */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  padding: 50px 40px;
+  border-radius: 7px;
+  transition: background 0.8s ease;
+}
+#formHolder:hover {
+  background: rgba(255, 255, 255, 0);
+}
+
+#userNameInputOne {
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+#userNameInputTwo {
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+#loginBtn {
+  background: #e3174c;
+  color: aliceblue;
+  transition: background 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  list-style: none;
+  text-decoration: none;
+}
+
+#loginBtn:hover {
+  background: #b5223f;
+}
