@@ -7,6 +7,7 @@ import RoutingSide from './component/Sidebar/RoutingSide';
 import Dashboard from './component/Sidebar/Dashboard';
 import DashboardTwo from './component/Sidebar/DashboardTwo';
 import Login from './component/Login/login';
+import LoginTwo from './component/Login/newLogin';
 import SampleSideBar from './component/NestedRoutes/SampleSideBar';
 import { routes, homeRoute, login } from './component/RouteName'
 
@@ -20,7 +21,7 @@ class App extends Component {
           <Switch>
 
 
-            <Route exact path="/" component={Login} />
+            <Route exact path="/" component={LoginTwo} />
             <Route path="/dashboard" component={DashboardTwo} />
 
 

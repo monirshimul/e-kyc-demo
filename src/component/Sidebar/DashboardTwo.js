@@ -12,13 +12,13 @@ function DashboardTwo() {
             <div>
                 <Nav />
                 <div className="d-flex" style={{ margin: "0", padding: "0", overflowX: "hidden" }}>
-                    <div class="sidebar">
-                        <div class="profile_info">
-                            <div class="profile_img">
+                    <div id="sidebar">
+                        <div id="profile_info">
+                            <div id="profile_img">
                                 <img src={profileImage} alt="profile_img" />
                             </div>
-                            <div class="profile_data">
-                                <p class="name">Abdur Rahim</p>
+                            <div id="profile_data">
+                                <p id="name">Abdur Rahim</p>
                                 {/* <span><i class="fas fa-map-marker-alt"></i> Texas, USA</span> */}
                             </div>
                         </div>

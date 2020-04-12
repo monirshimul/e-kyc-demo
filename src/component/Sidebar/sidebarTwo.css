@@ -18,7 +18,7 @@ body {
   position: relative;
 } */
 
-.sidebar {
+#sidebar {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -32,40 +32,40 @@ body {
   /* font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif; */
 }
 
-.sidebar .profile_info {
+#profile_info {
   text-align: center;
   border-bottom: 1px dashed #bdb8d7;
 }
 
-.sidebar .profile_info .profile_img {
+#profile_img {
   width: 50px;
   margin: 0 auto 5px;
 }
 
-.sidebar .profile_info .profile_img img {
+#profile_img img {
   width: 100%;
   display: block;
 }
 
-.sidebar .profile_info .profile_data .name {
+#name {
   font-size: 14px;
   color: #fff;
   margin-bottom: 5px;
   font-family: "Trade Winds";
 }
 
-.sidebar .profile_info .profile_data span {
+/* .sidebar .profile_info .profile_data span {
   color: #c4dcff;
-}
+} */
 
-.sidebar h2 {
+/* #sidebar h2 {
   color: #fff;
   text-transform: uppercase;
   text-align: center;
   margin-bottom: 30px;
-}
+} */
 
-.sidebar ul li {
+#sidebar ul li {
   list-style: none;
   padding: 15px;
   border-bottom: 1px solid #bdb8d7;
@@ -73,21 +73,21 @@ body {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.sidebar ul li a {
+#sidebar ul li a {
   color: #fff;
   display: block;
   text-decoration: none;
 }
 
-.sidebar ul li a .fas {
+#sidebar ul li a .fas {
   width: 25px;
 }
 
-.sidebar ul li:hover {
+#sidebar ul li:hover {
   background-color: #09bfb3;
 }
 
-.sidebar ul li:hover a {
+#sidebar ul li:hover a {
   color: #4b4f4f;
 }
 
@@ -99,7 +99,7 @@ body {
   border-right: 5px solid #099e96;
 }
 
-.sidebar ul li:hover #sub-menu-one {
+#sidebar ul li:hover #sub-menu-one {
   display: block;
   position: absolute;
   background-color: #f1f3f4;
