@@ -13,37 +13,6 @@ import Vission from './Sidebar/NestedComponentDemo/Vission';
 import Goal from './Sidebar/NestedComponentDemo/Goal';
 import Achievement from './Sidebar/NestedComponentDemo/Achievement';
 
-
-
-
-
-import logo1 from './Sidebar/image/undraw_performance_overview_p9bm.svg'
-import logo2 from './Sidebar/image/undraw_pcsocial_16rw.svg'
-import logo3 from './Sidebar/image/undraw_media_player_ylg8.svg'
-import logo4 from './Sidebar/image/undraw_code_thinking_1jeh.svg'
-import logo5 from './Sidebar/image/undraw_logo_design_bjnx.svg'
-import logo6 from './Sidebar/image/undraw_online_test_gba7.svg'
-import logo7 from './Sidebar/image/undraw_progressive_app_m9ms.svg'
-import logo8 from './Sidebar/image/undraw_web_search_eetr.svg'
-
-
-// export const login = [
-//     {
-//         "path": "/",
-//         "component": <Login />
-//     }
-// ]
-
-// export const homeRoute = [
-
-//     {
-//         "path": "/dashboard",
-//         "component": <Dashboard />
-//     }
-// ]
-
-
-{/* <img src={Logo} alt="Smiley face" height="50px" width="120px" /> */ }
 export const RouteName = [
     {
         "id": 1,

@@ -3,6 +3,7 @@ import React from 'react'
 import Nav from './Nav';
 import { BrowserRouter as Router, Switch, Route, useRouteMatch, Link } from 'react-router-dom';
 import { routes } from '../RouteName';
+import { nestedRoutes } from '../NestedRouteName';
 import "./sidebarTwo.css";
 import profileImage from "./image/undraw_profile_pic_ic5t.svg"
 
@@ -36,7 +37,7 @@ function DashboardTwo() {
                                     <div id="sub-menu-one">
                                         <ul>
 
-                                            {route.nested.map((nest, ind) => (
+                                            {nestedRoutes.map((nest, ind) => (
                                                 <li key={ind}>
                                                     <Link to={`${url}${nest.path}`}>{nest.featureName} <i className="fa fa-angle-right"></i></Link>
 
@@ -77,23 +78,27 @@ function DashboardTwo() {
                                             </Route>
 
 
-                                            {
-                                                route.nested.map((nest, ind) => (
-                                                    <Route
-                                                        key={ind}
-                                                        path={`${path}${nest.path}`}
-                                                        exact={nest.exact}
 
-                                                    >
-                                                        {nest.component}
-                                                    </Route>
-
-                                                ))
-                                            }
                                         </div>
 
 
                                     ))}
+
+                                    {
+                                        nestedRoutes.map((nest, ind) => (
+                                            <div>
+                                                <Route
+                                                    key={ind}
+                                                    path={`${path}${nest.path}`}
+                                                    exact={nest.exact}
+
+                                                >
+                                                    {nest.component}
+                                                </Route>
+                                            </div>
+
+                                        ))
+                                    }
 
                                 </div>
                             </div>
