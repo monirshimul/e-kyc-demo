@@ -3,8 +3,24 @@ import './newLogin.css'
 import './focusBlur.js'
 import bg from './image/wave2.png'
 import logo from './image/b2.png'
+import { withRouter, Link } from 'react-router-dom';
 
 class newLogin extends Component {
+
+    state = {
+        name: '',
+        password: ''
+    }
+
+    onChange = e => this.setState({ [e.target.name]: e.target.value });
+
+    onSubmit = e => {
+        e.preventDefault();
+        console.log("name", this.state.name);
+        console.log("password", this.state.password);
+        this.props.history.push("/dashboard");
+    }
+
     render() {
         return (
             <div>
@@ -12,18 +28,18 @@ class newLogin extends Component {
                 <div id="container">
 
                     <div className="login-content">
-                        <form id="loginForm" action="index.html">
+                        <form id="loginForm" onSubmit={this.onSubmit}>
 
                             {/* <img id="proImg" src={logo} /> */}
-                            <div id="proImg"><h1>Bank Asia</h1></div>
-                            <h2 className="title">e-kyc</h2>
+                            <div id="proImg"><h1>E-KYC</h1></div>
+                            <h2 className="title">Login</h2>
                             <div className="input-div one">
                                 <div className="i">
                                     <i className="fas fa-user"></i>
                                 </div>
                                 <div id="user">
                                     <h5>Username</h5>
-                                    <input type="text" id="inputUser" />
+                                    <input name="name" value={this.state.name} onChange={this.onChange} type="text" id="inputUser" />
                                 </div>
                             </div>
                             <div className="input-div pass">
@@ -32,11 +48,12 @@ class newLogin extends Component {
                                 </div>
                                 <div id="passwd">
                                     <h5>Password</h5>
-                                    <input type="password" id="inputPass" />
+                                    <input name="password" value={this.state.password} onChange={this.onChange} type="password" id="inputPass" />
                                 </div>
                             </div>
                             <a id="forgetPass" href="#">Forgot Password?</a>
-                            <input type="submit" className="btn" value="Login" />
+                            <input type="submit" id="btn" value="Login" />
+                            {/* <Link to="/dashboard" id="btn" >Login</Link> */}
                         </form>
                     </div>
                 </div>
@@ -45,4 +62,4 @@ class newLogin extends Component {
     }
 }
 
-export default newLogin
+export default withRouter(newLogin)

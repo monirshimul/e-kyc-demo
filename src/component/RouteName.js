@@ -1,14 +1,22 @@
 import React from 'react';
-import Home from './Home';
-import HomeName from './HomeName';
-import HomePc from './HomePc';
-import Offices from './Offices';
-import OfficePc from './OfficePc';
-import Designation from './Designation';
-import Ekyc from './Ekyc';
-import Dashboard from './Sidebar/Dashboard';
-import Login from './Login/login';
-import DropDown from './DropDown/DropDown'
+import Home from './Sidebar/NestedComponentDemo/Home';
+import Profile from './Sidebar/NestedComponentDemo/Profile';
+import About from './Sidebar/NestedComponentDemo/About';
+import Portfolio from './Sidebar/NestedComponentDemo/Portfolio';
+import Blogs from './Sidebar/NestedComponentDemo/Blogs';
+import Contact from './Sidebar/NestedComponentDemo/Contact';
+import Map from './Sidebar/NestedComponentDemo/Map';
+
+
+import Target from './Sidebar/NestedComponentDemo/Target';
+import Vission from './Sidebar/NestedComponentDemo/Vission';
+import Goal from './Sidebar/NestedComponentDemo/Goal';
+import Achievement from './Sidebar/NestedComponentDemo/Achievement';
+
+
+
+
+
 import logo1 from './Sidebar/image/undraw_performance_overview_p9bm.svg'
 import logo2 from './Sidebar/image/undraw_pcsocial_16rw.svg'
 import logo3 from './Sidebar/image/undraw_media_player_ylg8.svg'
@@ -40,257 +48,229 @@ export const RouteName = [
     {
         "id": 1,
         "featureName": "Home",
-        "logo": {
-            "src": logo1,
-            "alt": "Smile",
-            "height": "40px",
-            "width": "40px"
-        },
+        "className": "fas fa-home",
         "path": "/home",
         "nested": [{
-            "featureName": "Create",
-            "path": "/homepc",
+            "featureName": "Target",
+            "path": "/target",
             "exact": true,
-            "component": <Designation />
+            "component": <Target />
         }, {
-            "featureName": "Update",
-            "path": "/homepc",
-            "exact": true, "component": <Ekyc />
+            "featureName": "Vission",
+            "path": "/vission",
+            "exact": true, "component": <Vission />
         }, {
-            "featureName": "Delete",
-            "path": "/homepc",
+            "featureName": "Goal",
+            "path": "/goal",
             "exact": true,
-            "component": <DropDown />
-        }],
+            "component": <Goal />
+        },
+        {
+            "featureName": "Achievement",
+            "path": "/achievement",
+            "exact": true,
+            "component": <Achievement />
+        }
+        ],
         "exact": true,
         "component": <Home />
     },
 
     {
         "id": 2,
-        "featureName": "HomePc",
-        "logo": {
-            "src": logo2,
-            "alt": "Smile",
-            "height": "40px",
-            "width": "40px"
-        },
-        "path": "/homepc",
+        "featureName": "Profile",
+        "className": "fas fa-user",
+        "path": "/profile",
         "nested": [{
-            "featureName": "Delete",
-            "path": "/homepc",
+            "featureName": "Target",
+            "path": "/target",
             "exact": true,
-            "component": <DropDown />
+            "component": <Target />
         }, {
-            "featureName": "Update",
-            "path": "/homepc",
-            "exact": true,
-            "component": <HomePc />
+            "featureName": "Vission",
+            "path": "/vission",
+            "exact": true, "component": <Vission />
         }, {
-            "featureName": "Create",
-            "path": "/homepc",
+            "featureName": "Goal",
+            "path": "/goal",
             "exact": true,
-            "component": <Designation />
-        }],
+            "component": <Goal />
+        },
+        {
+            "featureName": "Achievement",
+            "path": "/achievement",
+            "exact": true,
+            "component": <Achievement />
+        }
+        ],
         "exact": true,
-        "component": <HomePc />
+        "component": <Profile />
     },
 
     {
         "id": 3,
-        "featureName": "HomeName",
-        "logo": {
-            "src": logo3,
-            "alt": "Smile",
-            "height": "40px",
-            "width": "40px"
-        },
-        "path": "/homename",
+        "featureName": "About",
+        "className": "fas fa-address-card",
+        "path": "/about",
         "nested": [{
-            "featureName": "Update",
-            "path": "/homepc",
+            "featureName": "Target",
+            "path": "/target",
             "exact": true,
-            "component": <DropDown />
+            "component": <Target />
         }, {
-            "featureName": "Create",
-            "path": "/homepc",
-            "exact": true,
-            "component": <Home />
+            "featureName": "Vission",
+            "path": "/vission",
+            "exact": true, "component": <Vission />
         }, {
-            "featureName": "Delete",
-            "path": "/homepc",
+            "featureName": "Goal",
+            "path": "/goal",
             "exact": true,
-            "component": <HomeName />
-        }],
+            "component": <Goal />
+        },
+        {
+            "featureName": "Achievement",
+            "path": "/achievement",
+            "exact": true,
+            "component": <Achievement />
+        }
+        ],
         "exact": true,
-        "component": <HomeName />
+        "component": <About />
     },
 
     {
         "id": 4,
-        "featureName": "Offices",
-        "logo": {
-            "src": logo4,
-            "alt": "Smile",
-            "height": "40px",
-            "width": "40px"
-        },
-        "path": "/office",
+        "featureName": "Portfolio",
+        "className": "fas fa-project-diagram",
+        "path": "/portfolio",
         "nested": [{
-            "featureName": "No Update",
-            "path": "/homepc",
+            "featureName": "Target",
+            "path": "/target",
             "exact": true,
-            "component": <DropDown />
+            "component": <Target />
         }, {
-            "featureName": "No Create",
-            "path": "/homepc",
-            "exact": true,
-            "component": <Offices />
+            "featureName": "Vission",
+            "path": "/vission",
+            "exact": true, "component": <Vission />
         }, {
-            "featureName": "No Delete",
-            "path": "/homepc",
+            "featureName": "Goal",
+            "path": "/goal",
             "exact": true,
-            "component": <OfficePc />
-        }],
+            "component": <Goal />
+        },
+        {
+            "featureName": "Achievement",
+            "path": "/achievement",
+            "exact": true,
+            "component": <Achievement />
+        }
+        ],
         "exact": true,
-        "component": <Offices />
+        "component": <Portfolio />
     },
 
     {
         "id": 5,
-        "featureName": "OfficePc",
-        "logo": {
-            "src": logo5,
-            "alt": "Smile",
-            "height": "40px",
-            "width": "40px"
-        },
-        "path": "/officepc",
+        "featureName": "Blogs",
+        "className": "fas fa-blog",
+        "path": "/blogs",
         "nested": [{
-            "featureName": "Will Mount",
-            "path": "/homepc",
+            "featureName": "Target",
+            "path": "/target",
             "exact": true,
-            "component": <DropDown />
+            "component": <Target />
         }, {
-            "featureName": "Did Mount",
-            "path": "/homepc",
-            "exact": true,
-            "component": <Ekyc />
+            "featureName": "Vission",
+            "path": "/vission",
+            "exact": true, "component": <Vission />
         }, {
-            "featureName": "Did Update",
-            "path": "/homepc",
+            "featureName": "Goal",
+            "path": "/goal",
             "exact": true,
-            "component": <Designation />
-        }],
+            "component": <Goal />
+        },
+        {
+            "featureName": "Achievement",
+            "path": "/achievement",
+            "exact": true,
+            "component": <Achievement />
+        }
+        ],
         "exact": true,
-        "component": <OfficePc />
+        "component": <Blogs />
     },
 
     {
         "id": 6,
-        "featureName": "Designation",
-        "logo": {
-            "src": logo6,
-            "alt": "Smile",
-            "height": "40px",
-            "width": "40px"
-        },
-        "path": "/designation",
+        "featureName": "Contact",
+        "className": "fas fa-address-book",
+        "path": "/contact",
         "nested": [{
-            "featureName": "Did UnMount",
-            "path": "/homepc",
+            "featureName": "Target",
+            "path": "/target",
             "exact": true,
-            "component": <Designation />
+            "component": <Target />
         }, {
-            "featureName": "Will UnMount",
-            "path": "/homepc",
-            "exact": true,
-            "component": <Ekyc />
+            "featureName": "Vission",
+            "path": "/vission",
+            "exact": true, "component": <Vission />
         }, {
-            "featureName": "Update",
-            "path": "/homepc",
+            "featureName": "Goal",
+            "path": "/goal",
             "exact": true,
-            "component": <DropDown />
-        }],
+            "component": <Goal />
+        },
+        {
+            "featureName": "Achievement",
+            "path": "/achievement",
+            "exact": true,
+            "component": <Achievement />
+        }
+        ],
         "exact": true,
-        "component": <Designation />
+        "component": <Contact />
     },
 
     {
         "id": 7,
-        "featureName": "Ekyc",
-        "logo": {
-            "src": logo7,
-            "alt": "Smile",
-            "height": "40px",
-            "width": "40px"
-        },
-        "path": "/Ekyc",
+        "featureName": "Map",
+        "className": "fas fa-map-pin",
+        "path": "/map",
         "nested": [{
-            "featureName": "Access Denied",
-            "path": "/homepc",
+            "featureName": "Target",
+            "path": "/target",
             "exact": true,
-            "component": <Designation />
+            "component": <Target />
         }, {
-            "featureName": "WelCome",
-            "path": "/homepc",
-            "exact": true,
-            "component": <Ekyc />
+            "featureName": "Vission",
+            "path": "/vission",
+            "exact": true, "component": <Vission />
         }, {
-            "featureName": "Hello World",
-            "path": "/homepc",
+            "featureName": "Goal",
+            "path": "/goal",
             "exact": true,
-            "component": <DropDown />
-        }],
-        "exact": true,
-        "component": <Ekyc />
-    },
-    {
-        "id": 8,
-        "featureName": "DropDown",
-        "logo": {
-            "src": logo8,
-            "alt": "Smile",
-            "height": "40px",
-            "width": "40px"
+            "component": <Goal />
         },
-        "path": "/DropDown",
-        "nested": [{
-            "featureName": "There",
-            "path": "/homepc",
+        {
+            "featureName": "Achievement",
+            "path": "/achievement",
             "exact": true,
-            "component": <DropDown />
-        }, {
-            "featureName": "Where",
-            "path": "/homepc",
-            "exact": true,
-            "component": <Ekyc />
-        }, {
-            "featureName": "Other",
-            "path": "/homepc",
-            "exact": true,
-            "component": <Designation />
-        }],
+            "component": <Achievement />
+        }
+        ],
         "exact": true,
-        "component": <DropDown />
+        "component": <Map />
     }
+
 
 
 ];
 
-const featureArray = ["Home", "HomePc", "HomeName", "Designation", "Offices", "Ekyc", "OfficePc", "DropDown"];
+const featureArray = ["Home", "Profile", "About", "Portfolio", "Blogs", "Contact", "Map"];
 
 
 export const routes = [];
 
-
-// for(let j = 0; j< featureArray.length; j++){
-// for(let i =0; i<RouteName.length; i++ ){
-//   if(RouteName[i].featureName === featureArray[j]){
-//     routes.push(RouteName[i]);
-//   }
-// }
-// }
 
 featureArray.map((val1, i) => {
     return RouteName.map((val2, index) => {

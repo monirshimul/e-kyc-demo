@@ -1,147 +1,120 @@
-import React from 'react';
-import RoutingSide from './RoutingSide';
+import React from 'react'
 
-import Sidebar from '../Sidebar/Sidebar';
 import Nav from './Nav';
 import { BrowserRouter as Router, Switch, Route, useRouteMatch, Link } from 'react-router-dom';
 import { routes } from '../RouteName';
-import Home from '../Home';
-import "../css/Sidebar.css";
-
-
-
-
+import "./sidebarTwo.css";
+import profileImage from "./image/undraw_profile_pic_ic5t.svg"
 
 function Dashboard() {
-    console.log("In the Dashboard")
-
-    // let route = []
-    // let nest = []
-
-    routes.map((r, i) => (
-        console.log(r)
-        // r.nested.map((nest, i) => (
-        //     console.log(nest)
-        // ))
-
-    ))
-
-
-    // console.log(route)
-
-    // route.map((rt, i) => (
-    //     nest.push(rt)
-    // ))
-    //console.log(nest)
-
-
-
-    let { path, url } = useRouteMatch();
     return (
         <Router>
-            <div >
+            <div>
                 <Nav />
                 <div className="d-flex" style={{ margin: "0", padding: "0", overflowX: "hidden" }}>
-                    <div className=" border-right" id="sidebar-wrapper" style={{ margin: "0", padding: "0", background: "#099e96", color: "#fff" }}>
-
-
-                        {/* This is the place for sidebar with nested dropdown */}
-                        {routes.map((route, index) => (
-
-                            // <div className="list-group list-group-flush" key={index} >
-                            //     {/* <button className="btn btn-info" onClick={() => history.push("/Basic")}>Use</button> */}
-                            //     <Link to={`${url}${route.path}`} className="list-group-item list-group-item-action " style={{ background: "#099e96", color: "#fff" }}>{route.featureName}</Link>
-                            // </div>
-                            <div className="list-group list-group-flush " key={index} >
-
-                                <div className="btn-group my-2" role="group" aria-label="Button group with nested dropdown" >
-                                    <img style={{ marginLeft: "10px" }} src={route.logo.src} alt={route.logo.alt} height={route.logo.height} width={route.logo.width} />
-                                    <Link to={`${url}${route.path}`} className="list-group-item list-group-item-action" style={{ background: "#099e96", color: "#fff" }}>{route.featureName}</Link>
-                                    <div className="btn-group" role="group">
-                                        <Link id="btnGroupDrop2" style={{ background: "#099e96", color: "#fff", marginRight: "20px" }} className="list-group-item list-group-item-action dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></Link>
-
-
-
-                                        <div className="dropdown-menu" aria-labelledby="btnGroupDrop2" style={{ background: "#099e96" }}>
-                                            {route.nested.map((nest, ind) => (
-                                                <Link key={ind} to={`${url}${route.path}`} className="dropdown-item" style={{ background: "#099e96", color: "#fff" }} to="#">{nest.featureName}</Link>
-
-                                            ))}
-                                        </div>
-
-
-                                        {/* <div className="dropdown-menu" aria-labelledby="btnGroupDrop2" style={{ background: "#099e96" }}>
-                                            <Link className="dropdown-item" style={{ background: "#099e96", color: "#fff" }} to="#">Create User By Admin</Link>
-                                            <Link className="dropdown-item" style={{ background: "#099e96", color: "#fff" }} to="#">Update User</Link>
-                                            <div className="dropdown-divider"></div>
-                                            <Link className="dropdown-item" style={{ background: "#099e96", color: "#fff" }} to="#">Update User</Link>
-                                            <Link className="dropdown-item" style={{ background: "#099e96", color: "#fff" }} to="#">Create User By Admin</Link>
-                                            <div className="dropdown-divider"></div>
-                                            <Link className="dropdown-item" style={{ background: "#099e96", color: "#fff" }} to="#">Create User By Admin</Link>
-                                            <Link className="dropdown-item" style={{ background: "#099e96", color: "#fff" }} to="#">Update User</Link>
-                                        </div> */}
-                                    </div>
-                                </div>
+                    <div id="sidebar">
+                        <div id="profile_info">
+                            <div id="profile_img">
+                                <img src={profileImage} alt="profile_img" />
                             </div>
-
-                        ))}
+                            <div id="profile_data">
+                                <p id="name">Abdur Rahim</p>
+                                {/* <span><i class="fas fa-map-marker-alt"></i> Texas, USA</span> */}
+                            </div>
+                        </div>
+                        {/* <h2>Sidebar</h2> */}
+                        <ul>
+                            <li><a href="#"><i class="fas fa-home"></i>Home <i class="fa fa-angle-right"></i></a>
+                                <div id="sub-menu-one">
+                                    <ul>
+                                        <li><a href="#">Target</a></li>
+                                        <li id="side-menu"><a href="#">Vission <i class="fa fa-angle-right"></i></a>
+                                            <div id="sub-menu-two">
+                                                <ul>
+                                                    <li><a href="#">Istler</a></li>
+                                                    <li><a href="#">Hikma</a></li>
+                                                    <li><a href="#">My Bank</a></li>
+                                                    <li><a href="#">Agent</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li><a href="#">Goal</a></li>
+                                        <li><a href="#">Achievment</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="#"><i class="fas fa-user"></i>Profile <i class="fa fa-angle-right"></i></a>
+                                <div id="sub-menu-one">
+                                    <ul>
+                                        <li><a href="#">Goal</a></li>
+                                        <li><a href="#">Vission</a></li>
+                                        <li><a href="#">Target</a></li>
+                                        <li><a href="#">Achievment</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="#"><i class="fas fa-address-card"></i>About <i class="fa fa-angle-right"></i></a>
+                                <div id="sub-menu-one">
+                                    <ul>
+                                        <li><a href="#">Achievment</a></li>
+                                        <li><a href="#">Vission</a></li>
+                                        <li><a href="#">Target</a></li>
+                                        <li><a href="#">Goal</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="#"><i class="fas fa-project-diagram"></i>portfolio <i class="fa fa-angle-right"></i></a>
+                                <div id="sub-menu-one">
+                                    <ul>
+                                        <li><a href="#">Vission</a></li>
+                                        <li><a href="#">Goal</a></li>
+                                        <li><a href="#">Target</a></li>
+                                        <li><a href="#">Achievment</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="#"><i class="fas fa-blog"></i>Blogs <i class="fa fa-angle-right"></i></a>
+                                <div id="sub-menu-one">
+                                    <ul>
+                                        <li><a href="#">Target</a></li>
+                                        <li><a href="#">Vission</a></li>
+                                        <li><a href="#">Goal</a></li>
+                                        <li><a href="#">Achievment</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="#"><i class="fas fa-address-book"></i>Contact <i class="fa fa-angle-right"></i></a>
+                                <div id="sub-menu-one">
+                                    <ul>
+                                        <li><a href="#">Achievment</a></li>
+                                        <li><a href="#">Vission</a></li>
+                                        <li><a href="#">Target</a></li>
+                                        <li><a href="#">Goal</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="#"><i class="fas fa-map-pin"></i>Map <i class="fa fa-angle-right"></i></a>
+                                <div id="sub-menu-one">
+                                    <ul>
+                                        <li><a href="#">Vission</a></li>
+                                        <li><a href="#">Goal</a></li>
+                                        <li><a href="#">Target</a></li>
+                                        <li><a href="#">Achievment</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
 
                     </div>
 
-                    {/* End Of SideBar */}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    <Switch>
-                        <div className="container my-5">
-                            <div className="row d-flex justify-content-center">
-                                <div className=" col-sm-12" style={{ boxShadow: "0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)" }}>
-                                    {routes.map((route, index) => (
-
-                                        <Route
-                                            key={index}
-                                            path={`${path}${route.path}`}
-                                            exact={route.exact}
-
-                                        >
-                                            {route.component}
-                                        </Route>
-
-
-                                    ))}
-                                </div>
-                            </div>
-
-                        </div>
-
-
-
-
-                    </Switch>
-
-
                 </div>
+
+
+
             </div>
         </Router>
-
-
 
     )
 }
 
 export default Dashboard
-
