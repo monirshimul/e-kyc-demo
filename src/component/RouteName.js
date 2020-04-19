@@ -55,6 +55,7 @@ export const RouteName = [
             "path": "/target",
             "exact": true,
             "component": <Target />
+
         }, {
             "featureName": "Vission",
             "path": "/vission",
