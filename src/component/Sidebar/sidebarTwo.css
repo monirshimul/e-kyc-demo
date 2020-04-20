@@ -128,7 +128,10 @@ label #showMenu {
 }
 
 #sidebar ul li:hover {
-  background-color: #09bfb3;
+  /* background-color: #09bfb3; */
+  background-image: linear-gradient(to right, #099e96, #10c9bd, #099e96);
+  background-size: 200%;
+  background-position: right;
   transition: all 0.3s ease;
 }
 
