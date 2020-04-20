@@ -28,8 +28,10 @@ function DashboardTwo() {
                 <div className="d-flex" style={{ margin: "0", padding: "0", overflowX: "hidden" }}>
                     <input type="checkbox" id="check" />
                     <label for="check">
-                        <i className="fa fa-angle-right" id="showMenu"></i>
-                        <i className="fas fa-times" id="cancel"></i>
+
+
+                        <i className="fas fa-backspace" id="cancel"></i>
+                        <i className="fas fa-arrow-right" id="showMenu"></i>
                     </label>
                     <div id="sidebar">
                         <div id="profile_info">
@@ -51,7 +53,7 @@ function DashboardTwo() {
                                         route !== undefined ? (
                                             <div>
                                                 <li>
-                                                    <Link to={`${url}${route.items.path}`}><i className={route.items.className}></i>{route.items.featureName} <i className="fa fa-angle-right"></i></Link>
+                                                    <Link id="linkOne" to={`${url}${route.items.path}`}><i className={route.items.className}></i><span id="menuOne">{route.items.featureName} <i className="fas fa-angle-right"></i></span> </Link>
 
                                                     <div id="sub-menu-one">
                                                         <ul>
@@ -94,7 +96,7 @@ function DashboardTwo() {
 
 
 
-                    <div className="container my-5 "  >
+                    <div className="container my-5 " style={{ zIndex: "-1" }}  >
                         <div className="row d-flex justify-content-center" >
                             <div className="col-sm-12" style={{ boxShadow: "0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)" }}>
 

@@ -24,11 +24,10 @@ body {
   padding: 0;
   box-sizing: border-box;
   width: 200px;
-  left: -200px;
+  left: 0px;
   height: 100vh;
   background: #099e96;
   transition: all 0.3s ease;
-  z-index: 1;
 
   padding: 10px 0px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -44,11 +43,12 @@ label #showMenu,
 label #cancel {
   position: absolute;
   cursor: pointer;
-  color: white;
+  color: #effffb;
 
   border: 1px solid #099e96;
   padding-top: 7px;
-  margin: 10px;
+  margin-left: 200px;
+  margin-top: 15px;
   font-size: 20px;
   background: #099e96;
   height: 35px;
@@ -56,23 +56,24 @@ label #cancel {
   text-align: center;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s ease;
+  z-index: 1;
 }
-label #cancel {
+label #showMenu {
   opacity: 0;
   visibility: hidden;
 }
 #check:checked ~ #sidebar {
-  left: 0;
+  left: -200px;
 }
 #check:checked ~ label #showMenu {
-  margin-left: 200px;
-  opacity: 0;
-  visibility: hidden;
-}
-#check:checked ~ label #cancel {
-  margin-left: 200px;
+  margin-left: 0px;
   opacity: 1;
   visibility: visible;
+}
+#check:checked ~ label #cancel {
+  margin-left: 0px;
+  opacity: 0;
+  visibility: hidden;
 }
 
 #profile_info {
@@ -221,39 +222,63 @@ label #cancel {
   margin-bottom: 20px;
 } */
 
-/* @media screen and(min-width: 768px) {
+/* @media (max-width: 860px) {
   #sidebar {
-    width: 200px;
+    width: 50px;
+    left: 0;
+    margin: 100px 0;
+    height: fit-content;
+    padding-top: 30px;
   }
-
   #sub-menu-one {
+    opacity: 0;
+    visibility: hidden;
+  }
+  #showMenu,
+  #cancel {
     display: none;
-    width: 140px;
-    margin-top: -38px;
-    margin-left: 185px;
+  }
+  #linkOne {
+    text-align: center;
+    
+    width: 45px;
+    margin-left: -10px;
+  }
+
+  #menuOne {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 0px 2px rgba(0, 0, 0, 0.12);
+    line-height: 50px;
+    width: 110px;
+    height: 52px;
+    padding-left: 10px;
     background-color: #f1f3f4;
+    margin-left: 10px;
+    margin-top: -15px;
+    font-size: 14px;
   }
 
-  #sidebar ul li:hover #sub-menu-one {
-    display: block;
-  }
-}
-
-@media screen and(min-width: 550px) {
-  #sidebar {
-    width: 200px;
+  #linkOne:hover #menuOne {
+    opacity: 1;
+    visibility: visible;
   }
 
-  #sub-menu-one {
+  #menuOne:hover #sub-menu-one {
+    background-color: orangered;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  #sidebar ul li:hover .fa-angle-right {
+    opacity: 1;
+    visibility: visible;
+    padding-top: 17px;
+  }
+
+  #profile_info {
     display: none;
-    width: 140px;
-    margin-top: -38px;
-    margin-left: 185px;
-    background-color: #f1f3f4;
   }
 
-  #sidebar ul li:hover #sub-menu-one {
-    display: block;
-    position: relative;
-  }
 } */
