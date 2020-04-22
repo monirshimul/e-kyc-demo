@@ -9,17 +9,43 @@ import { pruneRouteArray, getFlatRouteArray } from '../flattenObjectTwo';
 import profileImage from "./image/undraw_profile_pic_ic5t.svg"
 
 function DashboardTwo() {
-    console.log("In the DashboardTwo")
+    // console.log("In the DashboardTwo")
 
-    const firstMenu = pruneRouteArray(['Target', 'Vission', 'Goal', 'Achievement']);
-    //console.log("In the Menu", firstMenu)
+    const firstMenu = pruneRouteArray([1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 3, 3.1, 3.2, 3.3, 4, 4.1, 5, 5.1, 5.11, 5.12, 5.13, 5.2, 5.21, 5.22, 5.3, 5.4, 6, 6.1, 6.2, 6.3]);
+    // console.log("In the Menu", firstMenu)
     //console.dir(firstMenu, { depth: null });
     const allMenu = getFlatRouteArray(firstMenu);
-    allMenu.map((v, i) => {
-        console.log("All Menu========", v)
+
+
+    firstMenu.map((v, i) => {
+        if (v === undefined) {
+
+        } else {
+            console.log("Key ", v.items.key)
+            console.log("First Nested", v.nested)
+            v.nested.map((x, n) => {
+                if (x === undefined) {
+
+                } else {
+                    console.log("Key ", x.items.key)
+                    console.log("Second Nested", x.nested)
+                    if (x.nested) {
+                        x.nested.map((z, m) => {
+                            console.log("Key ", z.items.key)
+                            console.log("Third Nested", z.items)
+                        })
+                    }
+
+                }
+            })
+        }
+
+
+
+
     })
     let { path, url } = useRouteMatch();
-    console.log("Only Path", path)
+    // console.log("Only Path", path)
 
     return (
         <Router>
@@ -53,7 +79,7 @@ function DashboardTwo() {
                                         route !== undefined ? (
                                             <div>
                                                 <li>
-                                                    <Link id="linkOne" to={`${url}${route.items.path}`}><i className={route.items.className}></i><span id="menuOne">{route.items.featureName} <i className="fas fa-angle-right"></i></span> </Link>
+                                                    <Link id="linkOne" to={`${url}${route.items.path}`}><i className={route.items.className}></i><span id="menuOne">{route.items.featureName} {route.nested ? <i className="fas fa-angle-right" style={{ marginTop: "3px" }}></i> : ""}</span> </Link>
 
                                                     <div id="sub-menu-one">
                                                         <ul>
@@ -62,8 +88,31 @@ function DashboardTwo() {
                                                                     <div key={ind}>
                                                                         {
                                                                             nest !== undefined ? (
-                                                                                <li>
-                                                                                    <Link to={`${url}${nest.items.path}`}>{nest.items.featureName} <i className="fa fa-angle-right"></i></Link>
+                                                                                <li id="side-menu">
+                                                                                    <Link to={`${url}${nest.items.path}`}>{nest.items.featureName} {nest.nested ? <i className="fas fa-angle-right" style={{ marginTop: "3px" }}></i> : ""}</Link>
+
+                                                                                    <div id="sub-menu-two">
+                                                                                        <ul>
+                                                                                            {
+                                                                                                nest.nested ? (
+                                                                                                    nest.nested.map((deepNest, index) => (
+                                                                                                        <div key={index}>
+                                                                                                            {
+                                                                                                                deepNest !== undefined ? (
+                                                                                                                    <li>
+                                                                                                                        <Link to={`${url}${deepNest.items.path}`}>{deepNest.items.featureName} {deepNest.nested ? <i className="fas fa-angle-right" style={{ marginTop: "3px" }}></i> : ""}</Link>
+                                                                                                                    </li>
+
+                                                                                                                ) : ""
+                                                                                                            }
+                                                                                                        </div>
+                                                                                                    ))
+                                                                                                ) : ""
+
+                                                                                            }
+                                                                                        </ul>
+
+                                                                                    </div>
                                                                                 </li>
                                                                             ) : ""
                                                                         }
