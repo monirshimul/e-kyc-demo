@@ -8,7 +8,7 @@ import '../E-KYC/Simplified/utils/Common.css'
 const Nav = () => {
     return (
 
-        <div className="col-sm-12" style={{ margin: "0", zIndex: "1", position: "sticky", top: "0", padding: "0", background: "#099e96", boxShadow: "0 1px 3px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.24)" }}>
+        <div className="col-sm-12" style={{ margin: "0", zIndex: "10", position: "sticky", top: "0", padding: "0", background: "#099e96", boxShadow: "0 1px 3px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.24)" }}>
             <nav id="menu-bar" className="navbar navbar-expand-lg navbar-light border-bottom " style={{ background: "#099e96" }}>
                 <img src={Logo} alt="Smiley face" height="50px" width="185px" />
 

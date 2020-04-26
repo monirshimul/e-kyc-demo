@@ -38,8 +38,10 @@ export class DynamicComp extends Component {
                     this.state.jointArray.map((arr, index) => {
                         return (
                             <div>
+                                <h2 className="text-muted"><i className="fas fa-user" style={{ color: "#e3174c" }}></i> Applicant <small >{index + 1}</small></h2>
                                 {arr.comp}
-                                <button className="b" style={{ border: "none" }} onClick={() => this.deleteComp(index)}>Delete</button>
+                                <hr />
+                                <button className="b" style={{ border: "none", background: "#e3174c" }} onClick={(e) => window.confirm("Are you sure? All your data will be lost.") && this.deleteComp(index)}>Delete</button>
                                 <br />
                                 <hr />
                             </div>

@@ -70,6 +70,7 @@ export class Nominee extends Component {
                                                         <div className='card-body'
                                                         // style={{ paddingLeft: "140px" }}
                                                         >
+                                                            <h4 className="text-muted text-center">Nominee <small>{idx + 1}</small></h4>
 
                                                             <div className="form-group col-sm-4"
                                                                 style={{ marginTop: "10px" }}
@@ -126,7 +127,8 @@ export class Nominee extends Component {
                                                             style={{ paddingLeft: "50px" }}
                                                         >
                                                             <span className="b mr-5" onClick={addFields}>Add More</span>
-                                                            <span className="b mr-5" onClick={() => deteteRow(idx)}>Delete</span>
+                                                            {idx !== 0 ? (<span className="b mr-5" style={{ background: "#e3174c" }} onClick={() => deteteRow(idx)}>Delete</span>) : ""}
+
                                                             <span className="b">Submit</span>
 
 
