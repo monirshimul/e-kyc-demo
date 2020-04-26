@@ -5,9 +5,9 @@ import About from './Sidebar/NestedComponentDemo/About';
 import Portfolio from './Sidebar/NestedComponentDemo/Portfolio';
 import Blogs from './Sidebar/NestedComponentDemo/Blogs';
 import Contact from './Sidebar/NestedComponentDemo/Contact';
-import Map from './Sidebar/NestedComponentDemo/Map';
+import Account from './E-KYC/Simplified/Account';
 
-
+import RoleCreate from './E-KYC/Role/CreateRole';
 import Target from './Sidebar/NestedComponentDemo/Target';
 import Vission from './Sidebar/NestedComponentDemo/Vission';
 import Goal from './Sidebar/NestedComponentDemo/Goal';
@@ -35,7 +35,7 @@ const allRoutes = [
                     "featureName": "Create",
                     "path": "/role-create",
                     "exact": true,
-                    "component": <Target />
+                    "component": <RoleCreate />
                 }
 
 
@@ -253,7 +253,7 @@ const allRoutes = [
                             "featureName": "Create",
                             "path": "/simplified-create",
                             "exact": true,
-                            "component": <Target />
+                            "component": <Account />
                         }
 
                     },

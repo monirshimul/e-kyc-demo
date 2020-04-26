@@ -22,7 +22,9 @@ class App extends Component {
 
 
             <Route exact path="/" component={LoginTwo} />
+
             <Route path="/dashboard" component={DashboardTwo} />
+
 
 
 

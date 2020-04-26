@@ -1,9 +1,12 @@
 import React from 'react'
 
 import Nav from './Nav';
+import Welcome from './Welcome';
 import { BrowserRouter as Router, Switch, Route, useRouteMatch, Link } from 'react-router-dom';
 import { routes } from '../RouteName';
 import { nestedRoutes } from '../NestedRouteName';
+import MultiStepFace from '../E-KYC/Simplified/MainFace'
+import JointMultiStep from '../E-KYC/Simplified/DynamicComp';
 import "./sidebarTwo.css";
 import { pruneRouteArray, getFlatRouteArray } from '../flattenObjectTwo';
 import profileImage from "./image/undraw_profile_pic_ic5t.svg"
@@ -17,33 +20,35 @@ function DashboardTwo() {
     const allMenu = getFlatRouteArray(firstMenu);
 
 
-    firstMenu.map((v, i) => {
-        if (v === undefined) {
 
-        } else {
-            console.log("Key ", v.items.key)
-            console.log("First Nested", v.nested)
-            v.nested.map((x, n) => {
-                if (x === undefined) {
+    //=========== Testing The Feature File ===============
 
-                } else {
-                    console.log("Key ", x.items.key)
-                    console.log("Second Nested", x.nested)
-                    if (x.nested) {
-                        x.nested.map((z, m) => {
-                            console.log("Key ", z.items.key)
-                            console.log("Third Nested", z.items)
-                        })
-                    }
+    // firstMenu.map((v, i) => {
+    //     if (v === undefined) {
 
-                }
-            })
-        }
+    //     } else {
+    //         console.log("Key ", v.items.key)
+    //         console.log("First Nested", v.nested)
+    //         v.nested.map((x, n) => {
+    //             if (x === undefined) {
 
+    //             } else {
+    //                 console.log("Key ", x.items.key)
+    //                 console.log("Second Nested", x.nested)
+    //                 if (x.nested) {
+    //                     x.nested.map((z, m) => {
+    //                         console.log("Key ", z.items.key)
+    //                         console.log("Third Nested", z.items)
+    //                     })
+    //                 }
 
+    //             }
+    //         })
+    //     }
+    // })
 
+    //=========== End of Testing The Feature File ===============
 
-    })
     let { path, url } = useRouteMatch();
     // console.log("Only Path", path)
 
@@ -79,6 +84,7 @@ function DashboardTwo() {
                                         route !== undefined ? (
                                             <div>
                                                 <li>
+                                                    {/* First Menu */}
                                                     <Link id="linkOne" to={`${url}${route.items.path}`}><i className={route.items.className}></i><span id="menuOne">{route.items.featureName} {route.nested ? <i className="fas fa-angle-right" style={{ marginTop: "3px" }}></i> : ""}</span> </Link>
 
                                                     <div id="sub-menu-one">
@@ -89,6 +95,7 @@ function DashboardTwo() {
                                                                         {
                                                                             nest !== undefined ? (
                                                                                 <li id="side-menu">
+                                                                                    {/* First Nested Menu */}
                                                                                     <Link to={`${url}${nest.items.path}`}>{nest.items.featureName} {nest.nested ? <i className="fas fa-angle-right" style={{ marginTop: "3px" }}></i> : ""}</Link>
 
                                                                                     <div id="sub-menu-two">
@@ -100,6 +107,7 @@ function DashboardTwo() {
                                                                                                             {
                                                                                                                 deepNest !== undefined ? (
                                                                                                                     <li>
+                                                                                                                        {/* Second Nested menu */}
                                                                                                                         <Link to={`${url}${deepNest.items.path}`}>{deepNest.items.featureName} {deepNest.nested ? <i className="fas fa-angle-right" style={{ marginTop: "3px" }}></i> : ""}</Link>
                                                                                                                     </li>
 
@@ -145,34 +153,35 @@ function DashboardTwo() {
 
 
 
-                    <div className="container my-5 " style={{ zIndex: "-1" }}  >
+                    <div className="container my-5 ">
                         <div className="row d-flex justify-content-center" >
-                            <div className="col-sm-12" style={{ boxShadow: "0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)" }}>
-
-                                <Switch>
-                                    {allMenu.map((route, index) => (
 
 
-                                        <Route
-                                            key={index}
-                                            path={`${path}${route.path}`}
-                                            exact={route.exact}
-
-                                        >
-                                            {route.component}
-                                        </Route>
+                            <Switch>
+                                <Route exact path={`${path}`} component={Welcome} />
+                                {allMenu.map((route, index) => (
 
 
 
+                                    <Route
+                                        key={index}
+                                        path={`${path}${route.path}`}
+                                        exact={route.exact}
+
+
+                                    >
+                                        {route.component}
+                                    </Route>
+
+                                ))}
+
+                                <Route path={`${path}/face-account`} component={MultiStepFace} />
+                                <Route path={`${path}/dynamic-comp`} component={JointMultiStep} />
+                            </Switch>
 
 
 
-                                    ))}
-                                </Switch>
 
-
-
-                            </div>
                         </div>
 
                     </div>

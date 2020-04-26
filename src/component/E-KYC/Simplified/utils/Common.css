@@ -1,0 +1,94 @@
+.b {
+  min-width: 110px;
+  min-height: 30px;
+  background-image: linear-gradient(to right, #0cbdb4, #74dad3, #308f8f);
+  background-size: 200%;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 15px;
+  line-height: 30px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.24);
+  text-align: center;
+}
+
+.b:hover {
+  background-position: right;
+}
+
+.bigB {
+  min-width: 250px;
+  min-height: 60px;
+  background-image: linear-gradient(to right, #0cbdb4, #74dad3, #308f8f);
+  background-size: 200%;
+
+  color: #fff;
+  font-size: 15px;
+  line-height: 30px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.24);
+  text-align: center;
+}
+
+.bigB:hover {
+  background-position: right;
+}
+
+.up {
+  min-width: 110px;
+  min-height: 40px;
+  background-image: linear-gradient(to right, #099e96, #68dbce, #308f8f);
+  background-size: 200%;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 17px;
+  line-height: 40px;
+  text-align: center;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.24);
+  margin-bottom: 8px;
+}
+
+.up:hover {
+  background-position: right;
+}
+
+.im {
+  min-width: 110px;
+  min-height: 40px;
+  background-image: linear-gradient(to right, #dcf8f7, #ecf3f1, #d7eeee);
+  background-size: 200%;
+  color: #fff;
+  font-size: 17px;
+  text-align: center;
+  line-height: 40px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.im:hover {
+  background-position: right;
+}
+
+.divBg {
+  min-width: 110px;
+  min-height: 40px;
+  background-image: linear-gradient(to right, #099e96, #68dbce, #308f8f);
+  background-size: 200%;
+  min-height: 60px;
+  color: #fff;
+  font-size: 17px;
+  text-align: center;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.24);
+  margin-bottom: 8px;
+  margin-bottom: 20px;
+}
+
+.divBg:hover {
+  background-position: right;
+}
