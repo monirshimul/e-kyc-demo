@@ -32,7 +32,7 @@ const allRoutes = [
             {
                 items: {
                     "key": 1.1,
-                    "featureName": "Create",
+                    "featureName": "Create Role",
                     "path": "/role-create",
                     "exact": true,
                     "component": <RoleCreate />
@@ -43,7 +43,7 @@ const allRoutes = [
             {
                 items: {
                     "key": 1.2,
-                    "featureName": "Approve",
+                    "featureName": "Approve Role",
                     "path": "/role-approve",
                     "exact": true,
                     "component": <Vission />
@@ -52,7 +52,7 @@ const allRoutes = [
             {
                 items: {
                     "key": 1.3,
-                    "featureName": "Update",
+                    "featureName": "Update Role",
                     "path": "/role-update",
                     "exact": true,
                     "component": <Vission />
@@ -61,7 +61,7 @@ const allRoutes = [
             {
                 items: {
                     "key": 1.4,
-                    "featureName": "Update Approve",
+                    "featureName": "Update Approve Role",
                     "path": "/role-update-approve",
                     "exact": true,
                     "component": <Vission />
@@ -70,7 +70,7 @@ const allRoutes = [
             {
                 items: {
                     "key": 1.5,
-                    "featureName": "List",
+                    "featureName": "Role List",
                     "path": "/role-list",
                     "exact": true,
                     "component": <Vission />
@@ -79,7 +79,7 @@ const allRoutes = [
             {
                 items: {
                     "key": 1.6,
-                    "featureName": "Delete",
+                    "featureName": "Delete Role",
                     "path": "/role-delete",
                     "exact": true,
                     "component": <Vission />
@@ -104,7 +104,7 @@ const allRoutes = [
             {
                 items: {
                     "key": 2.1,
-                    "featureName": "Create",
+                    "featureName": "Create User",
                     "path": "/user-create",
                     "exact": true,
                     "component": <Target />
@@ -114,7 +114,7 @@ const allRoutes = [
             {
                 items: {
                     "key": 2.2,
-                    "featureName": "Approve",
+                    "featureName": "Approve User",
                     "path": "/user-approve",
                     "exact": true,
                     "component": <Vission />
@@ -123,7 +123,7 @@ const allRoutes = [
             {
                 items: {
                     "key": 2.3,
-                    "featureName": "Update",
+                    "featureName": "Update User",
                     "path": "/user-update",
                     "exact": true,
                     "component": <Goal />
@@ -132,7 +132,7 @@ const allRoutes = [
             {
                 items: {
                     "key": 2.4,
-                    "featureName": "Update Approve",
+                    "featureName": "Update Approve User",
                     "path": "/user-update-approve",
                     "exact": true,
                     "component": <Achievement />
@@ -141,7 +141,7 @@ const allRoutes = [
             {
                 items: {
                     "key": 2.5,
-                    "featureName": "List",
+                    "featureName": "User List",
                     "path": "/user-list",
                     "exact": true,
                     "component": <Vission />
@@ -150,7 +150,7 @@ const allRoutes = [
             {
                 items: {
                     "key": 2.6,
-                    "featureName": "Delete",
+                    "featureName": "Delete User",
                     "path": "/user-delete",
                     "exact": true,
                     "component": <Vission />
