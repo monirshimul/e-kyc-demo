@@ -7,6 +7,7 @@ import { routes } from '../RouteName';
 import { nestedRoutes } from '../NestedRouteName';
 import MultiStepFace from '../E-KYC/Simplified/MainFace'
 import JointMultiStep from '../E-KYC/Simplified/DynamicComp';
+import Success from '../E-KYC/Role/SuccessRole';
 import "./sidebarTwo.css";
 import { pruneRouteArray, getFlatRouteArray } from '../flattenObjectTwo';
 import profileImage from "./image/undraw_profile_pic_ic5t.svg"
@@ -177,6 +178,7 @@ function DashboardTwo() {
 
                                 <Route path={`${path}/face-account`} component={MultiStepFace} />
                                 <Route path={`${path}/dynamic-comp`} component={JointMultiStep} />
+                                <Route path={`${path}/success`} component={Success} />
                             </Switch>
 
 

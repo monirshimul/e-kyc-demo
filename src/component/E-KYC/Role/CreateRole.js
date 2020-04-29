@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import Checkbox from '../Simplified/Reusable/CheckBox'
+import { withRouter } from 'react-router-dom'
+
 
 import { pruneRouteArray, getFlatRouteArray } from '../../flattenObjectTwo';
 
@@ -20,21 +21,21 @@ class CreateRole extends Component {
 
 
     // ================== Multi Check box onChange Method ==========================
-    handleChange = (e) => {
-        const item = e.target.name;
-        const isChecked = e.target.value;
-        if (this.state.checkedItems.has(item)) {
-            this.state.checkedItems.delete(item)
+    checkHandleChange = (e) => {
+        const key = e.target.name;
+        const value = e.target.value;
+        if (this.state.checkedItems.has(key)) {
+            this.state.checkedItems.delete(key)
 
             this.setState({
 
-                selectedFeature: Array.from(this.state.checkedItems.keys())
+                selectedFeature: Array.from(this.state.checkedItems.entries())
             })
 
         } else {
             this.setState({
-                checkedItems: this.state.checkedItems.set(item, isChecked),
-                selectedFeature: Array.from(this.state.checkedItems.keys())
+                checkedItems: this.state.checkedItems.set(key, value),
+                selectedFeature: Array.from(this.state.checkedItems.entries())
             });
 
         }
@@ -42,13 +43,28 @@ class CreateRole extends Component {
 
     // ==================End of Multi Check box onChange Method ======================
 
+    onFormSubmit = () => {
+        const { roleName, selectedFeature } = this.state
+        const data = {
+            roleName,
+            selectedFeature
+        }
+        console.log(data)
+        localStorage.setItem("Role Data", JSON.stringify(data))
+        this.props.history.push("/dashboard/success", data)
+    }
+
+    textHandleChange = e => {
+        e.preventDefault()
+        this.setState({ roleName: e.target.value });
+    }
 
 
 
 
 
     render() {
-        const { selectedFeature } = this.state
+        const { selectedFeature, roleName } = this.state
         const firstMenu = pruneRouteArray([1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 3, 3.1, 3.2, 3.3, 4, 4.1, 5, 5.1, 5.11, 5.12, 5.13, 5.2, 5.21, 5.22, 5.3, 5.4, 6, 6.1, 6.2, 6.3]);
         const allMenu = getFlatRouteArray(firstMenu);
         // allMenu.map((v, i) => {
@@ -68,42 +84,22 @@ class CreateRole extends Component {
         return (
             <div className="card col-sm-7" style={{ paddingTop: "25px" }}>
                 {
-                    console.log("Selected Feature==>", selectedFeature)
+                    // console.log("Selected Feature==>", selectedFeature)
+                    selectedFeature.map(v => console.log(v))
+
                 }
 
                 <div className="card-header divBg">
                     <h3 className="text-center pt-3">
-                        {selectedFeature.map((v, i) => (
-
-                            v === null ? "" : v + ","
-
-                        ))}
+                        Create Role
                     </h3>
-
-
-
-
                 </div>
                 <div className="card-body">
-                    <form onSubmit={this.onSubmit}>
-                        {/* Account Number */}
+                    <form onSubmit={this.onFormSubmit}>
 
-
-                        {/* Product and Service */}
-                        <div className='form-group'>
-                            <label htmlFor="">Select Role Name</label>
-                            <select
-                                className='custom-select'
-                                value={this.state.product}
-                                onChange={this.onChange}
-                                name="product"
-                            >
-                                <option value='' disabled>--Select--</option>
-                                <option value='Current Account'>Admin</option>
-                                <option value='Savings Account'>Super Admin</option>
-                                <option value='Credit Account'>Branch User</option>
-                                <option value='Debit Card'>Branch Admin</option>
-                            </select>
+                        <div className="form-group">
+                            <label htmlFor="">Applicant's Name</label>
+                            <input type="text" value={roleName} onChange={this.textHandleChange} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Applicant's Name" />
                         </div>
 
 
@@ -123,8 +119,9 @@ class CreateRole extends Component {
                                                         checked={this.state.checkedItems.get(features.key)}
                                                         className="custom-control-input" id={index + 1}
                                                         style={{ marginRight: "5px" }}
-                                                        onChange={this.handleChange}
+                                                        onChange={this.checkHandleChange}
                                                         value={features.featureName}
+                                                        style={{ cursor: "pointer" }}
                                                     />
                                                     <label className="custom-control-label" for={index + 1}>{features.featureName}</label>
                                                 </div>
@@ -153,4 +150,4 @@ class CreateRole extends Component {
     }
 }
 
-export default CreateRole
+export default withRouter(CreateRole)
