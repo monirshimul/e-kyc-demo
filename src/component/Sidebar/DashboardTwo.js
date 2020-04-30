@@ -178,6 +178,7 @@ function DashboardTwo() {
 
                                 <Route path={`${path}/face-account`} component={MultiStepFace} />
                                 <Route path={`${path}/dynamic-comp`} component={JointMultiStep} />
+
                                 <Route path={`${path}/success`} component={Success} />
                             </Switch>
 

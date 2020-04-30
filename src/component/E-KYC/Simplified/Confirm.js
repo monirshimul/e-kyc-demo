@@ -26,7 +26,7 @@ export class Confirm extends Component {
                     </div>
                     <div class="row card-body d-flex justify-content-around">
                         <div className="card col-sm-5" style={{ margin: "20px 0px" }}>
-                            <div className="card-header up">
+                            <div className="card-header im">
                                 <h5>Account Details</h5>
                             </div>
                             <div className="card-body">
@@ -36,7 +36,7 @@ export class Confirm extends Component {
                             </div>
                         </div>
                         <div className="card col-sm-5" style={{ margin: "20px 0px" }}>
-                            <div className="card-header up">
+                            <div className="card-header im">
                                 <h5>Nominee Details</h5>
                             </div>
                             <div className="card-body">
@@ -56,7 +56,7 @@ export class Confirm extends Component {
 
 
                         <div className="card col-sm-5" style={{ margin: "20px 0px" }}>
-                            <div className="card-header up">
+                            <div className="card-header im">
                                 <h5>Nid Details</h5>
                             </div>
                             <div className="card-body text-center">
@@ -70,7 +70,7 @@ export class Confirm extends Component {
                             </div>
                         </div>
                         <div className="card col-sm-5" style={{ margin: "20px 0px" }}>
-                            <div className="card-header up">
+                            <div className="card-header im">
                                 <h5>Personal Information</h5>
                             </div>
                             <div className="card-body">
@@ -89,7 +89,7 @@ export class Confirm extends Component {
                         </div>
 
                         <div className="card col-sm-5" style={{ margin: "20px 0px" }}>
-                            <div className="card-header up">
+                            <div className="card-header im">
                                 <h5>Applicant Image</h5>
                             </div>
                             <div className="card-body text-center" style={{ margin: "20px 0px" }}>
@@ -101,7 +101,7 @@ export class Confirm extends Component {
                         </div>
 
                         <div className="card col-sm-5" style={{ margin: "20px 0px" }}>
-                            <div className="card-header up">
+                            <div className="card-header im">
                                 <h5>Applicant Signature</h5>
                             </div>
                             <div className="card-body text-center">

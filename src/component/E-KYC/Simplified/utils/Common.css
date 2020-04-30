@@ -11,10 +11,12 @@
   cursor: pointer;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.24);
   text-align: center;
+  text-decoration: none;
 }
 
 .b:hover {
   background-position: right;
+  color: #656666;
 }
 
 .bigB {
@@ -61,7 +63,7 @@
   min-height: 40px;
   background-image: linear-gradient(to right, #dcf8f7, #ecf3f1, #d7eeee);
   background-size: 200%;
-  color: #fff;
+  color: #333;
   font-size: 17px;
   text-align: center;
   line-height: 40px;

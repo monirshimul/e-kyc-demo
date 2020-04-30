@@ -98,34 +98,46 @@ class CreateRole extends Component {
                     <form onSubmit={this.onFormSubmit}>
 
                         <div className="form-group">
-                            <label htmlFor="">Applicant's Name</label>
-                            <input type="text" value={roleName} onChange={this.textHandleChange} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Applicant's Name" />
+                            <label htmlFor="">Role Name</label>
+                            <input type="text" value={roleName} onChange={this.textHandleChange} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Role Name" />
                         </div>
 
 
 
-                        <div className="form-group" >
+                        <div className="form-group"  >
 
 
+
+
+                            <p className="text-muted">Choose Feature From Feature's List</p>
                             {
                                 allMenu.map((features, index) => (
                                     <div>
                                         {
-                                            features.key % 1 !== 0 ? (
-                                                <div className="custom-control custom-checkbox " key={index} >
-                                                    <input
-                                                        type="checkbox"
-                                                        name={features.key}
-                                                        checked={this.state.checkedItems.get(features.key)}
-                                                        className="custom-control-input" id={index + 1}
-                                                        style={{ marginRight: "5px" }}
-                                                        onChange={this.checkHandleChange}
-                                                        value={features.featureName}
-                                                        style={{ cursor: "pointer" }}
-                                                    />
-                                                    <label className="custom-control-label" for={index + 1}>{features.featureName}</label>
+                                            features.key % 1 === 0 ? (
+                                                <div className="">
+                                                    <hr />
+                                                    <h1 className="text-center im" >{features.featureName}</h1>
+                                                    <hr />
+
                                                 </div>
-                                            ) : ""
+
+                                            ) : (
+                                                    <div className="custom-control custom-checkbox" style={{ marginLeft: "25px" }} key={index} >
+                                                        <input
+                                                            type="checkbox"
+                                                            name={features.key}
+                                                            checked={this.state.checkedItems.get(features.key)}
+                                                            className="custom-control-input" id={index + 1}
+                                                            style={{ marginRight: "5px" }}
+                                                            onChange={this.checkHandleChange}
+                                                            value={features.featureName}
+                                                            style={{ cursor: "pointer" }}
+                                                        />
+                                                        <label className="custom-control-label" for={index + 1}>{features.featureName}</label>
+
+                                                    </div>
+                                                )
                                         }
                                     </div>
 
